@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Buy Mate TCG 預訂價目表｜TCG、球星卡及其他精品預訂</title>
+  <meta name="description" content="Buy Mate TCG 預訂價目表，集中查看 Pokémon TCG、海賊王卡牌、球星卡及其他精品預訂資訊，可按分類或搜尋商品並透過 WhatsApp 查詢。" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#FFF8E8" />
+  <meta property="og:title" content="Buy Mate TCG 預訂價目表" />
+  <meta property="og:description" content="查看 TCG、球星卡及其他精品預訂資訊，支援分類、搜尋及 WhatsApp 查詢。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tcg.buymatehk.com" />
+  <meta property="og:image" content="https://tcg.buymatehk.com/og-image.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Buy Mate TCG 預訂價目表",
+    "url": "https://tcg.buymatehk.com/",
+    "inLanguage": "zh-Hant-HK",
+    "description": "香港 TCG、球星卡及其他精品預訂價目表，可按分類及搜尋商品並透過 WhatsApp 查詢最新報價及供應。",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tcg.buymatehk.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json" id="itemListJsonLd"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Noto+Sans+TC:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fff8e8;
+      --paper: #fffdf6;
+      --ink: #121212;
+      --ink-soft: #333333;
+      --muted: #686868;
+      --white: #ffffff;
+      --yellow: #ffd93d;
+      --blue: #55dff2;
+      --mint: #65e890;
+      --pink: #f89ab8;
+      --lavender: #d8b4e2;
+      --orange: #ffb45c;
+      --shadow: 4px 4px 0 #121212;
+      --shadow-mid: 6px 6px 0 #121212;
+      --shadow-lg: 8px 8px 0 #121212;
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --sidebar: 320px;
+      --marquee-height: 44px;
+    }
+
+    * { box-sizing: border-box; }
+    html { width: 100%; max-width: 100%; scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      width: 100%; max-width: 100%; min-height: 100dvh; margin: 0; color: var(--ink);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 18px 18px, rgba(18,18,18,.055) 2px, transparent 2px),
+        linear-gradient(to right, rgba(18,18,18,.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(18,18,18,.035) 1px, transparent 1px);
+      background-size: 36px 36px, 36px 36px, 36px 36px;
+      font-family: "Nunito", "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      overflow-x: hidden;
+    }
+    body.modal-open { overflow: hidden !important; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+    ::selection { background: var(--pink); color: var(--ink); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+
+    .marquee {
+      width: 100%; max-width: 100%; height: var(--marquee-height); overflow: hidden;
+      display: flex; align-items: center; border-bottom: 4px solid var(--ink);
+      background: var(--pink); color: var(--ink); white-space: nowrap;
+      font-size: .92rem; font-weight: 800; letter-spacing: .015em;
+    }
+    .marquee-strip {
+      display: inline-flex; align-items: center; width: max-content; min-width: max-content;
+      will-change: transform; animation: marqueeSlide 68s linear infinite;
+    }
+    .marquee:hover .marquee-strip { animation-play-state: paused; }
+    .marquee-group { display: inline-flex; align-items: center; gap: 46px; padding-right: 46px; }
+    @keyframes marqueeSlide { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+
+    .app-shell {
+      width: 100%; max-width: 100%; min-height: calc(100dvh - var(--marquee-height));
+      display: grid; grid-template-columns: var(--sidebar) minmax(0, 1fr); align-items: start;
+    }
+    .sidebar {
+      position: sticky; top: 0; height: calc(100dvh - var(--marquee-height)); min-height: 640px;
+      display: flex; flex-direction: column; border-right: 4px solid var(--ink);
+      background: rgba(255,248,232,.98); box-shadow: 8px 0 0 rgba(18,18,18,.06); z-index: 10;
+      overflow: hidden;
+    }
+    .brand-panel { position: relative; flex: 0 0 auto; padding: 30px 24px 26px; border-bottom: 4px solid var(--ink); background: var(--yellow); overflow: hidden; }
+    .brand-panel::after { content: ""; position: absolute; right: -44px; top: -44px; width: 120px; height: 120px; border: 4px solid var(--ink); border-radius: 50%; background: var(--blue); box-shadow: var(--shadow-mid); opacity: .9; }
+    .brand-panel h1 { position: relative; z-index: 1; margin: 0; color: var(--ink); font-size: clamp(2.05rem, 3.2vw, 2.68rem); line-height: .96; letter-spacing: -.055em; font-weight: 900; }
+    .brand-line { position: relative; z-index: 1; width: 52px; height: 7px; margin: 15px 0 11px; border-radius: 999px; background: var(--ink); }
+    .brand-subtitle { position: relative; z-index: 1; display: inline-flex; align-items: center; min-height: 38px; padding: 6px 14px; border: 3px solid var(--ink); border-radius: 999px; background: var(--white); box-shadow: var(--shadow); font-size: 1.15rem; line-height: 1.15; letter-spacing: .04em; font-weight: 900; }
+
+    .category-panel { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 22px; }
+    .side-label { margin: 0 0 14px; color: var(--ink); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; }
+    .nav-list { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .cat-button, .info-button, .search-input, .sort-select, .product-card, .modal-card, .mobile-filter, .mini-pill, .review-box, .site-footer-card {
+      border: 3px solid var(--ink); box-shadow: var(--shadow);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+    }
+    .cat-button, .info-button, .mobile-filter {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      width: 100%; height: 54px; min-height: 54px; padding: 0 14px;
+      border-radius: var(--radius-md); background: var(--white); color: var(--ink); font-weight: 800; text-align: left;
+    }
+    .cat-button:hover, .info-button:hover, .mobile-filter:hover, .product-card:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-mid); }
+    .cat-button:active, .info-button:active, .mobile-filter:active, .product-card:active { transform: translate(3px,3px); box-shadow: 1px 1px 0 var(--ink); }
+    .cat-button.is-active, .mobile-filter.is-active { transform: none; box-shadow: inset 4px 4px 0 rgba(18,18,18,.13), var(--shadow); background: var(--active-color, var(--yellow)); }
+    .cat-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .95rem; line-height: 1.22; }
+    .cat-emoji { flex: 0 0 auto; font-size: 1.18rem; }
+
+    .sidebar-bottom { flex: 0 0 auto; padding: 18px 22px 22px; border-top: 4px solid var(--ink); background: var(--mint); }
+    .info-button { justify-content: center; margin-bottom: 16px; background: var(--white); }
+    .review-box { display: block; padding: 16px; border-radius: var(--radius-md); background: var(--ink); color: var(--white); }
+    .review-box:hover { transform: translateY(-2px); }
+    .review-stars { display: block; margin-bottom: 7px; color: var(--yellow); letter-spacing: .08em; font-size: 1.05rem; font-weight: 900; }
+    .review-box strong { display: block; margin-bottom: 5px; font-size: .98rem; line-height: 1.35; font-weight: 900; }
+    .review-box span:last-child { display: block; color: rgba(255,255,255,.84); font-size: .82rem; line-height: 1.55; font-weight: 600; }
+
+    .main { min-width: 0; min-height: calc(100dvh - var(--marquee-height)); display: flex; flex-direction: column; }
+    .mobile-header { display: none; }
+    .toolbar {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(330px, 520px); gap: 20px; align-items: end;
+      padding: 20px 28px 18px; border-bottom: 4px solid var(--ink);
+      background: rgba(255,248,232,.96); backdrop-filter: blur(10px);
+    }
+    .toolbar-head { min-width: 0; }
+    .toolbar-title { margin: 0; font-size: clamp(1.65rem, 2.2vw, 2.08rem); line-height: 1.05; letter-spacing: -.045em; font-weight: 900; }
+    .toolbar-copy { max-width: 780px; margin: 9px 0 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.55; font-weight: 600; }
+    .toolbar-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 11px; }
+    .mini-pill { display: inline-flex; align-items: center; min-height: 34px; padding: 6px 10px; border-radius: 999px; background: var(--white); font-size: .8rem; line-height: 1.2; font-weight: 800; }
+    .mini-pill.highlight { background: var(--yellow); }
+    .toolbar-controls { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 12px; align-items: stretch; }
+    .search-wrap { position: relative; min-width: 0; display: block; }
+    .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; pointer-events: none; }
+    .search-input, .sort-select { width: 100%; height: 52px; border-radius: var(--radius-md); background: var(--white); color: var(--ink); outline: none; font-weight: 800; }
+    .search-input { padding: 0 14px 0 45px; }
+    .sort-select { min-width: 0; padding: 0 12px; cursor: pointer; }
+    .search-input:focus, .sort-select:focus { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--ink); background: #fff4a8; }
+
+    .products-area { width: 100%; max-width: 1560px; margin: 0 auto; padding: 24px 28px 18px; }
+    .mobile-review { display: none; }
+    .products-grid { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 22px; align-items: stretch; }
+    .product-card {
+      position: relative; min-width: 0; min-height: 216px; display: flex; flex-direction: column;
+      border-radius: var(--radius-lg); overflow: hidden; background: var(--white); color: var(--ink); isolation: isolate;
+      transform-origin: center bottom; will-change: transform; text-align: left;
+    }
+    .product-card::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(255,255,255,.42), transparent 42%); opacity: .65; z-index: 0; }
+    .product-card:hover { transform: translate(-4px,-8px) rotate(-.25deg); box-shadow: 10px 12px 0 var(--ink); }
+    .product-card:active { transform: translate(3px,3px) rotate(0); box-shadow: 1px 1px 0 var(--ink); }
+    .product-card.is-pending { background: #fffaf0; }
+    .product-card.is-pending::after { content: ""; position: absolute; inset: 52px 0 0; background: repeating-linear-gradient(135deg, rgba(18,18,18,.035) 0, rgba(18,18,18,.035) 8px, transparent 8px, transparent 18px); pointer-events: none; }
+    .product-top { position: relative; z-index: 1; display: flex; align-items: center; min-height: 52px; padding: 10px 13px; border-bottom: 4px solid var(--ink); background: var(--card-color, var(--yellow)); }
+    .category-chip { min-width: 0; display: inline-flex; align-items: center; gap: 7px; max-width: 100%; padding: 6px 10px; border: 2px solid var(--ink); border-radius: 999px; background: rgba(255,255,255,.88); font-size: .76rem; line-height: 1.15; letter-spacing: .04em; font-weight: 900; }
+    .chip-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .product-body { position: relative; z-index: 1; flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 17px; }
+    .product-name { margin: 0 0 9px; color: var(--ink); font-size: 1.06rem; line-height: 1.35; letter-spacing: -.012em; font-weight: 900; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+    .product-sub { margin: 0 0 14px; color: var(--muted); font-size: .82rem; line-height: 1.38; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+    .product-price-row { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+    .price-label { margin: 0 0 5px; color: var(--muted); font-size: .76rem; line-height: 1.2; letter-spacing: .08em; font-weight: 800; }
+    .product-price { margin: 0; color: var(--ink); font-size: clamp(1.5rem, 2.3vw, 1.86rem); line-height: 1; letter-spacing: -.035em; font-weight: 900; }
+    .pending-pill { display: inline-flex; align-items: center; min-height: 28px; margin-top: 7px; padding: 3px 10px; border: 2px solid var(--ink); border-radius: 999px; background: #fff4a8; font-size: .78rem; line-height: 1.1; font-weight: 900; }
+    .product-hint { flex: 0 0 auto; align-self: flex-end; color: var(--muted); font-size: .78rem; line-height: 1.35; font-weight: 700; text-align: right; }
+
+    .empty-state { display: none; grid-column: 1 / -1; padding: 52px 22px; border: 4px dashed var(--ink); border-radius: var(--radius-xl); background: var(--white); box-shadow: var(--shadow-lg); text-align: center; }
+    .empty-emoji { display: block; margin-bottom: 12px; font-size: 4rem; transform: rotate(-10deg); }
+    .empty-state h3 { margin: 0; font-size: 1.45rem; line-height: 1.25; letter-spacing: -.035em; font-weight: 900; }
+    .empty-state p { margin: 10px 0 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.6; font-weight: 700; }
+
+    .site-footer { width: 100%; max-width: 1560px; margin: 0 auto; padding: 0 28px 30px; }
+    .site-footer-card { width: 100%; padding: 18px 18px 20px; border-radius: var(--radius-lg); background: var(--white); text-align: center; overflow: hidden; }
+    .footer-company { display: block; margin: 0; font-size: clamp(.78rem, 1.2vw, .98rem); line-height: 1.55; font-weight: 900; white-space: nowrap; }
+    .footer-lines { max-width: 820px; margin: 12px auto 0; color: var(--muted); font-size: .86rem; line-height: 1.65; font-weight: 650; }
+    .footer-lines span { display: block; }
+    .footer-link { display: inline-flex; align-items: center; justify-content: center; margin-top: 14px; min-height: 38px; padding: 8px 14px; border-radius: 999px; background: var(--yellow); font-size: .84rem; font-weight: 900; }
+
+    .modal { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 18px; }
+    .modal.is-open { display: flex; }
+    .modal-backdrop { position: absolute; inset: 0; background: rgba(18,18,18,.62); backdrop-filter: blur(4px); }
+    .modal-card { position: relative; z-index: 1; width: min(760px, 100%); max-height: min(88dvh, 760px); display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; background: var(--white); }
+    .modal-titlebar { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px 15px; border-bottom: 4px solid var(--ink); background: var(--blue); }
+    .window-dots { display: inline-flex; align-items: center; gap: 7px; }
+    .window-dots i { width: 13px; height: 13px; display: inline-block; border: 2px solid var(--ink); border-radius: 999px; background: var(--pink); }
+    .window-dots i:nth-child(2) { background: var(--yellow); }
+    .window-dots i:nth-child(3) { background: var(--mint); }
+    .modal-titlebar h2 { margin: 0 auto 0 0; font-size: 1rem; line-height: 1.25; font-weight: 900; }
+    .modal-close { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 3px solid var(--ink); border-radius: 11px; background: var(--pink); box-shadow: var(--shadow); font-size: .92rem; font-weight: 900; }
+    .modal-content { overflow-y: auto; padding: 22px; background: var(--bg); }
+    .notice-box, .step-box, .delivery-list li { border: 3px solid var(--ink); box-shadow: var(--shadow); }
+    .notice-box { margin-bottom: 22px; padding: 18px; border-radius: var(--radius-lg); background: var(--yellow); }
+    .notice-box h3, .modal-section h3 { margin: 0 0 9px; font-size: 1.16rem; line-height: 1.28; font-weight: 900; }
+    .notice-box p, .modal-section p, .modal-section li { margin: 0; color: var(--ink-soft); font-size: .94rem; line-height: 1.65; font-weight: 600; }
+    .modal-section { margin-top: 22px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 12px; }
+    .step-box { position: relative; display: grid; grid-template-columns: 52px minmax(0,1fr); gap: 12px; align-items: start; padding: 14px; border-radius: var(--radius-md); background: var(--white); }
+    .step-index { width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border: 3px solid var(--ink); border-radius: 13px; background: var(--lavender); color: var(--ink); font-size: 1.02rem; line-height: 1; font-weight: 900; box-shadow: 3px 3px 0 var(--ink); }
+    .step-box:nth-child(2) .step-index { background: var(--pink); }
+    .step-box:nth-child(3) .step-index { background: var(--mint); }
+    .step-box:nth-child(4) .step-index { background: var(--blue); }
+    .step-title { display: block; margin: 1px 0 4px; font-size: .98rem; line-height: 1.35; font-weight: 900; }
+    .step-copy { display: block; color: var(--ink-soft); font-size: .83rem; line-height: 1.58; font-weight: 600; }
+    .delivery-list { display: grid; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .delivery-list li { padding: 12px 13px; border-radius: var(--radius-md); background: var(--white); font-size: .9rem; }
+    .modal-footer-note { margin-top: 22px; padding-top: 16px; border-top: 3px dashed var(--ink); color: var(--muted); text-align: center; font-size: .84rem; line-height: 1.55; font-weight: 700; }
+    .modal-footer-note span { display: block; }
+
+    @media (min-width: 1500px) { .products-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (max-width: 1200px) {
+      :root { --sidebar: 292px; }
+      .toolbar { grid-template-columns: 1fr; align-items: start; }
+      .toolbar-controls { max-width: 760px; }
+      .products-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    }
+    @media (max-width: 1024px) {
+      .marquee { height: 40px; font-size: .84rem; }
+      .marquee-strip { animation-duration: 58s; }
+      .marquee-group { gap: 34px; padding-right: 34px; }
+      .app-shell { min-height: calc(100dvh - 40px); display: block; }
+      .sidebar { display: none; }
+      .main { width: 100%; max-width: 100%; min-height: calc(100dvh - 40px); }
+      .mobile-header { display: block; width: 100%; max-width: 100%; border-bottom: 4px solid var(--ink); background: var(--yellow); padding: 16px 14px 10px; overflow: hidden; }
+      .mobile-header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 13px; }
+      .mobile-header h1 { margin: 0; font-size: 1.86rem; line-height: 1; letter-spacing: -.052em; font-weight: 900; }
+      .mobile-header p { margin: 7px 0 0; color: var(--ink-soft); font-size: .92rem; line-height: 1.35; font-weight: 800; }
+      .mobile-info-button { flex: 0 0 auto; width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border: 3px solid var(--ink); border-radius: 999px; background: var(--white); box-shadow: var(--shadow); font-size: 1rem; font-weight: 900; }
+      .mobile-filter-row { width: 100%; max-width: 100%; display: flex; flex-wrap: nowrap; gap: 10px; overflow-x: auto; overflow-y: hidden; padding: 2px 2px 8px; scroll-snap-type: x proximity; }
+      .mobile-filter { flex: 0 0 auto; width: auto; min-width: 118px; max-width: 190px; height: 42px; min-height: 42px; padding: 0 12px; border-radius: 999px; scroll-snap-align: start; }
+      .mobile-filter .cat-name { font-size: .84rem; }
+      .mobile-filter .cat-emoji { font-size: 1.08rem; }
+      .toolbar { position: sticky; top: 0; z-index: 20; width: 100%; max-width: 100%; display: block; padding: 12px 14px; border-bottom: 4px solid var(--ink); }
+      .toolbar-head { display: none; }
+      .toolbar-controls { width: 100%; max-width: 100%; display: grid; grid-template-columns: 1fr; gap: 10px; }
+      .search-input, .sort-select { height: 48px; }
+      .products-area { width: 100%; max-width: 100%; padding: 16px 14px 14px; overflow-x: hidden; }
+      .mobile-review { display: block; margin-bottom: 16px; }
+      .products-grid { width: 100%; max-width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .product-card { width: 100%; max-width: 100%; min-height: 194px; border-radius: 17px; }
+      .product-card:hover { transform: none; box-shadow: var(--shadow); }
+      .product-card:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--ink); }
+      .product-body { padding: 16px; }
+      .product-name { font-size: 1.02rem; -webkit-line-clamp: 2; }
+      .product-sub { font-size: .8rem; -webkit-line-clamp: 1; }
+      .product-price { font-size: 1.58rem; }
+      .product-price-row { align-items: flex-end; }
+      .product-hint { display: none; }
+      .site-footer { width: 100%; max-width: 100%; padding: 0 14px 28px; overflow-x: hidden; }
+      .site-footer-card { padding: 16px 12px 18px; }
+      .footer-company { font-size: clamp(.72rem, 3.2vw, .92rem); }
+      .footer-lines { font-size: .8rem; line-height: 1.62; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .modal-content { padding: 18px; }
+    }
+    @media (max-width: 640px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 360px) {
+      .mobile-info-button { width: 38px; height: 38px; }
+      .mobile-header h1 { font-size: 1.66rem; }
+      .footer-company { font-size: .69rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee" aria-label="最新預訂資訊">
+    <div class="marquee-strip">
+      <div class="marquee-group" aria-hidden="false">
+        <span>🔥 Buy Mate TCG 預訂價目表</span>
+        <span>🛒 PTCG・海賊王卡牌・球星卡・熱門精品預訂</span>
+        <span>⭐ 340+ Carousell 五星評價</span>
+        <span>價錢已包順豐站或智能櫃取貨｜上門派送（順豐到付）</span>
+        <span>價目最後更新：2026/05/16</span>
+        <span>價格或會變動，查詢時再確認。</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span>🔥 Buy Mate TCG 預訂價目表</span>
+        <span>🛒 PTCG・海賊王卡牌・球星卡・熱門精品預訂</span>
+        <span>⭐ 340+ Carousell 五星評價</span>
+        <span>價錢已包順豐站或智能櫃取貨｜上門派送（順豐到付）</span>
+        <span>價目最後更新：2026/05/16</span>
+        <span>價格或會變動，查詢時再確認。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="商品分類及查詢資訊">
+      <div class="brand-panel">
+        <h1>Buy Mate<br />TCG</h1>
+        <div class="brand-line"></div>
+        <div class="brand-subtitle">預訂價目表</div>
+      </div>
+      <div class="category-panel">
+        <p class="side-label">分類 Categories</p>
+        <div id="desktopNav" class="nav-list"></div>
+      </div>
+      <div class="sidebar-bottom">
+        <button id="desktopInfoButton" class="info-button" type="button">預訂須知與流程</button>
+        <a class="review-box" href="https://www.carousell.com.hk/u/buymate.hk/?tab=reviews" target="_blank" rel="noopener noreferrer">
+          <span class="review-stars">★★★★★</span>
+          <strong>340+ Carousell 五星評價</strong>
+          <span>價目最後更新：2026/05/16<br>價格或會變動，查詢時再確認。</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main" id="top">
+      <header class="mobile-header">
+        <div class="mobile-header-top">
+          <div>
+            <h1>Buy Mate TCG</h1>
+            <p>預訂價目表</p>
+          </div>
+          <button id="mobileInfoButton" class="mobile-info-button" type="button" aria-label="查看預訂須知">?</button>
+        </div>
+        <div id="mobileNav" class="mobile-filter-row hide-scroll"></div>
+      </header>
+
+      <section class="toolbar" aria-label="商品搜尋及排序">
+        <div class="toolbar-head">
+          <h2 id="currentCategoryTitle" class="toolbar-title">全部商品</h2>
+          <p class="toolbar-copy">現正開放預訂的 TCG、球星卡及其他精品價目表。見到想查詢的款式，可透過 WhatsApp 或 Carousell PM 確認最新報價及供應。</p>
+          <div class="toolbar-meta">
+            <span id="resultStatus" class="mini-pill highlight">共 0 款商品</span>
+            <span class="mini-pill">價目最後更新：2026/05/16</span>
+            <span class="mini-pill">價格或會變動，查詢時再確認。</span>
+          </div>
+        </div>
+        <div class="toolbar-controls">
+          <label class="search-wrap">
+            <span class="sr-only">搜尋商品</span>
+            <span class="search-icon">🔍</span>
+            <input id="searchInput" class="search-input" type="search" placeholder="搜尋商品 / 分類 / 版本..." autocomplete="off" />
+          </label>
+          <label>
+            <span class="sr-only">排序商品</span>
+            <select id="sortSelect" class="sort-select"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="products-area" aria-label="商品價目表">
+        <div class="mobile-review">
+          <a class="review-box" href="https://www.carousell.com.hk/u/buymate.hk/?tab=reviews" target="_blank" rel="noopener noreferrer">
+            <span class="review-stars">★★★★★</span>
+            <strong>340+ Carousell 五星評價</strong>
+            <span>價目最後更新：2026/05/16<br>價格或會變動，查詢時再確認。</span>
+          </a>
+        </div>
+        <div id="productsGrid" class="products-grid"></div>
+        <div id="emptyState" class="empty-state">
+          <span class="empty-emoji">🃏</span>
+          <h3>暫時搵唔到相關商品</h3>
+          <p>可以試下改短關鍵字，或者轉去其他分類再睇。</p>
+        </div>
+      </section>
+
+      <footer class="site-footer" aria-label="網站資料">
+        <div class="site-footer-card">
+          <strong class="footer-company">拍覓國際網購（香港）</strong>
+          <strong class="footer-company">Buy Mate Ecommerce International (HK)</strong>
+          <div class="footer-lines">
+            <span>TCG・球星卡・其他精品預訂價目表</span>
+            <span>價目最後更新：2026/05/16</span>
+            <span>網站價格只供快速參考，最終以付款確認時報價及供應為準。</span>
+          </div>
+          <a class="footer-link" href="https://www.carousell.com.hk/u/buymate.hk/?tab=reviews" target="_blank" rel="noopener noreferrer">查看 Carousell 評價</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="infoModal" class="modal" aria-hidden="true">
+    <div id="modalBackdrop" class="modal-backdrop"></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-titlebar">
+        <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <h2 id="modalTitle">預訂須知與流程</h2>
+        <button id="modalCloseButton" class="modal-close" type="button" aria-label="關閉">X</button>
+      </div>
+      <div class="modal-content">
+        <div class="notice-box">
+          <h3>價格及供應以確認為準</h3>
+          <p>TCG、球星卡及其他熱門精品的價格，有機會因市場、供應及匯率情況變動。網站價目表主要方便快速查看，最終以付款確認時的報價及供應情況為準。</p>
+        </div>
+        <div class="modal-section">
+          <h3>預訂流程</h3>
+          <div class="steps-grid">
+            <div class="step-box"><span class="step-index">01</span><div><strong class="step-title">選擇商品</strong><span class="step-copy">用分類、搜尋或排序搵想預訂的款式。</span></div></div>
+            <div class="step-box"><span class="step-index">02</span><div><strong class="step-title">查詢確認</strong><span class="step-copy">透過 WhatsApp 或 Carousell PM 確認最新報價及供應。</span></div></div>
+            <div class="step-box"><span class="step-index">03</span><div><strong class="step-title">付款預訂</strong><span class="step-copy">支援 PayMe、AlipayHK 及 FPS 轉數快。</span></div></div>
+            <div class="step-box"><span class="step-index">04</span><div><strong class="step-title">安排收貨</strong><span class="step-copy">到貨後可安排順豐站、智能櫃或上門派送。</span></div></div>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h3>收貨方式</h3>
+          <ul class="delivery-list">
+            <li>順豐站自取</li>
+            <li>順豐智能櫃自取</li>
+            <li>上門派送 (順豐運費到付)</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h3>付款方式</h3>
+          <p>支援 PayMe、AlipayHK 及 FPS 轉數快。</p>
+        </div>
+        <div class="modal-footer-note">
+          <span>拍覓國際網購（香港）</span>
+          <span>Buy Mate Ecommerce International (HK)</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    "use strict";
+
+    const WHATSAPP_NUMBER = "852XXXXXXXX";
+
+    const categoryLabels = {
+      all: "全部商品",
+      us_ptcg: "美版 PTCG",
+      jp_ptcg: "日版 PTCG",
+      onepiece: "海賊王卡牌",
+      sports: "球星卡",
+      beyblade: "爆旋陀螺 X",
+      yugioh: "遊戲王",
+      lorcana: "迪士尼卡牌",
+      others: "其他精品"
+    };
+
+    const categories = [
+      { id: "all", emoji: "🛒", color: "#ffffff", order: 0 },
+      { id: "us_ptcg", emoji: "🇺🇸", color: "#ffd93d", order: 1 },
+      { id: "jp_ptcg", emoji: "🇯🇵", color: "#55dff2", order: 2 },
+      { id: "onepiece", emoji: "🏴‍☠️", color: "#62dff4", order: 3 },
+      { id: "sports", emoji: "🏀", color: "#65e890", order: 4 },
+      { id: "beyblade", emoji: "🌀", color: "#ffb45c", order: 5 },
+      { id: "yugioh", emoji: "🔮", color: "#d8b4e2", order: 6 },
+      { id: "lorcana", emoji: "✨", color: "#f89ab8", order: 7 },
+      { id: "others", emoji: "📦", color: "#ffffff", order: 8 }
+    ];
+
+    const sortOptions = [
+      ["default", "綜合排序"],
+      ["popular", "熱門款式優先"],
+      ["newest", "最新上架優先"],
+      ["priceAsc", "價格由低至高"],
+      ["priceDesc", "價格由高至低"],
+      ["nameAsc", "商品名稱 A 至 Z"]
+    ];
+
+    const products = [
+      { id: 1, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG First Partner Illustration Collection Series 2", meta: "Illustration Collection", price: "HK$520", priceNum: 520, popularity: 74, sortOrder: 1, dateAdded: "2026-05-16", tags: "pokemon ptcg first partner illustration collection series 2 美版" },
+      { id: 2, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Mega Evolution ME04 Chaos Rising Elite Trainer Box", meta: "Elite Trainer Box", price: "HK$869", priceNum: 869, popularity: 96, sortOrder: 2, dateAdded: "2026-05-16", tags: "pokemon ptcg chaos rising etb me04 elite trainer box 美版" },
+      { id: 3, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Mega Evolution Chaos Rising Booster Bundle", meta: "Booster Bundle", price: "HK$445", priceNum: 445, popularity: 84, sortOrder: 3, dateAdded: "2026-05-16", tags: "pokemon ptcg chaos rising booster bundle 美版" },
+      { id: 4, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Mega Evolution ME05 Pitch Black Elite Trainer Box", meta: "Elite Trainer Box", price: "HK$859", priceNum: 859, popularity: 98, sortOrder: 4, dateAdded: "2026-05-16", tags: "pokemon ptcg pitch black etb me05 elite trainer box 美版" },
+      { id: 5, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Mega Lucario ex League Battle Deck", meta: "League Battle Deck", price: "HK$480", priceNum: 480, popularity: 76, sortOrder: 5, dateAdded: "2026-05-16", tags: "pokemon ptcg mega lucario ex league battle deck 美版" },
+      { id: 6, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Mega Greninja ex Premium Collection", meta: "Premium Collection", price: "HK$669", priceNum: 669, popularity: 88, sortOrder: 6, dateAdded: "2026-05-16", tags: "pokemon ptcg mega greninja ex premium collection 美版" },
+      { id: 7, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Mega Clefable Moonlit Tin", meta: "Moonlit Tin", price: "HK$420", priceNum: 420, popularity: 68, sortOrder: 7, dateAdded: "2026-05-16", tags: "pokemon ptcg mega clefable moonlit tin 美版" },
+      { id: 8, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Mega Gengar Moonlit Tin", meta: "Moonlit Tin", price: "HK$420", priceNum: 420, popularity: 82, sortOrder: 8, dateAdded: "2026-05-16", tags: "pokemon ptcg mega gengar moonlit tin 美版" },
+      { id: 9, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Lumiose City Mini Tin Display", meta: "Mini Tin Display", price: "HK$1,950", priceNum: 1950, popularity: 72, sortOrder: 9, dateAdded: "2026-05-16", tags: "pokemon ptcg lumiose city mini tin display 美版" },
+      { id: 10, catId: "us_ptcg", country: "🇺🇸", name: "Pokémon TCG Poké Ball Tin Display Winter 2024 (6 Tins)", meta: "Tin Display", price: "HK$1,550", priceNum: 1550, popularity: 80, sortOrder: 10, dateAdded: "2026-05-16", tags: "pokemon ptcg poke ball tin display winter 2024 6 tins 美版" },
+      { id: 11, catId: "jp_ptcg", country: "🇯🇵", name: "M5 深淵之瞳原盒", meta: "ポケモンカードゲーム M5 BOX", price: "HK$755", priceNum: 755, popularity: 93, sortOrder: 11, dateAdded: "2026-05-16", tags: "pokemon ptcg m5 深淵之瞳 原盒 日版 ポケモンカード" },
+      { id: 12, catId: "jp_ptcg", country: "🇯🇵", name: "M4 忍者飛旋原盒", meta: "ポケモンカードゲーム M4 BOX", price: "HK$775", priceNum: 775, popularity: 91, sortOrder: 12, dateAdded: "2026-05-16", tags: "pokemon ptcg m4 忍者飛旋 原盒 日版 ポケモンカード" },
+      { id: 13, catId: "jp_ptcg", country: "🇯🇵", name: "東北 Pokémon Center 禮盒", meta: "ポケモンセンタートウホク スペシャルBOX", price: "HK$1,239", priceNum: 1239, popularity: 86, sortOrder: 13, dateAdded: "2026-05-16", tags: "pokemon ptcg pc 東北 tohoku special box 禮盒 日版" },
+      { id: 14, catId: "jp_ptcg", country: "🇯🇵", name: "廣島 Pokémon Center 禮盒", meta: "ポケモンセンターヒロシマ スペシャルBOX", price: "HK$1,699", priceNum: 1699, popularity: 89, sortOrder: 14, dateAdded: "2026-05-16", tags: "pokemon ptcg pc 廣島 hiroshima special box 禮盒 日版" },
+      { id: 15, catId: "jp_ptcg", country: "🇯🇵", name: "福岡 Pokémon Center 禮盒", meta: "ポケモンセンターフクオカ スペシャルBOX", price: "HK$1,589", priceNum: 1589, popularity: 87, sortOrder: 15, dateAdded: "2026-05-16", tags: "pokemon ptcg pc 福岡 fukuoka special box 禮盒 日版" },
+      { id: 16, catId: "jp_ptcg", country: "🇯🇵", name: "日版 100 Deck 散盒", meta: "100デッキ", price: "HK$305", priceNum: 305, popularity: 62, sortOrder: 16, dateAdded: "2026-05-16", tags: "pokemon ptcg 100 deck 散盒 日版" },
+      { id: 17, catId: "onepiece", country: "🏴‍☠️", name: "One Piece Card Game Booster Box", meta: "海賊王卡牌", price: "HK$待定", priceNum: -1, popularity: 70, sortOrder: 17, dateAdded: "2026-05-16", tags: "海賊王 航海王 one piece tcg op booster box" },
+      { id: 18, catId: "sports", country: "🏀", name: "2025-26 Topps Hoops Basketball Hobby Box", meta: "球星卡預訂", price: "HK$待定", priceNum: -1, popularity: 66, sortOrder: 18, dateAdded: "2026-05-16", tags: "nba basketball sports cards 球星卡 topps hoops hobby box" },
+      { id: 19, catId: "beyblade", country: "🇯🇵", name: "BEYBLADE X UX-09 Starter Samurai Saber 2-70L", meta: "日版｜Takara Tomy", price: "HK$待定", priceNum: -1, popularity: 64, sortOrder: 19, dateAdded: "2026-05-16", tags: "爆旋陀螺 beyblade x ux-09 samurai saber takara tomy" },
+      { id: 20, catId: "yugioh", country: "🇯🇵", name: "Yu-Gi-Oh! OCG Booster Box", meta: "遊戲王 OCG 預訂", price: "HK$待定", priceNum: -1, popularity: 58, sortOrder: 20, dateAdded: "2026-05-16", tags: "遊戲王 yu-gi-oh yugioh ocg booster box" },
+      { id: 21, catId: "lorcana", country: "✨", name: "Disney Lorcana TCG Booster Box", meta: "迪士尼卡牌", price: "HK$待定", priceNum: -1, popularity: 54, sortOrder: 21, dateAdded: "2026-05-16", tags: "disney lorcana tcg 迪士尼 卡牌 booster box" },
+      { id: 22, catId: "others", country: "📦", name: "其他精品預訂查詢", meta: "其他精品", price: "HK$待定", priceNum: -1, popularity: 50, sortOrder: 22, dateAdded: "2026-05-16", tags: "其他 精品 玩具 figure card game 預訂 查詢" }
+    ];
+
+    const desktopNav = document.getElementById("desktopNav");
+    const mobileNav = document.getElementById("mobileNav");
+    const productsGrid = document.getElementById("productsGrid");
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+    const resultStatus = document.getElementById("resultStatus");
+    const currentCategoryTitle = document.getElementById("currentCategoryTitle");
+    const emptyState = document.getElementById("emptyState");
+    const infoModal = document.getElementById("infoModal");
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalCloseButton = document.getElementById("modalCloseButton");
+    const desktopInfoButton = document.getElementById("desktopInfoButton");
+    const mobileInfoButton = document.getElementById("mobileInfoButton");
+
+    let activeCategory = "all";
+    let currentSort = "default";
+    let searchTerm = "";
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>'"]/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#39;",
+        '"': "&quot;"
+      }[char]));
+    }
+
+    function getCategoryById(id) {
+      return categories.find(category => category.id === id) || categories[0];
+    }
+
+    function getCategoryName(id) {
+      return categoryLabels[id] || id;
+    }
+
+    function hasKnownPrice(product) {
+      return typeof product.priceNum === "number" && product.priceNum >= 0;
+    }
+
+    function buildWhatsAppUrl(product) {
+      const message = `你好，我想查詢以下 預訂：\n\n商品名稱：${product.name}\n數量：\n希望收貨方式：\n\n麻煩幫忙確認最新報價及供應情況，謝謝。`;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function updateUrlState() {
+      try {
+        const params = new URLSearchParams();
+        if (activeCategory !== "all") params.set("cat", activeCategory);
+        if (searchTerm) params.set("q", searchTerm);
+        if (currentSort !== "default") params.set("sort", currentSort);
+        const newUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
+        window.history.replaceState({}, "", newUrl);
+      } catch (error) {
+        // Some in-app browsers restrict History API. The page should still work without URL state.
+      }
+    }
+
+    function readUrlState() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const cat = params.get("cat");
+        const query = params.get("q");
+        const sort = params.get("sort");
+        if (cat && categories.some(category => category.id === cat)) activeCategory = cat;
+        if (query) searchTerm = query.slice(0, 80);
+        if (sort && sortOptions.some(([value]) => value === sort)) currentSort = sort;
+      } catch (error) {
+        activeCategory = "all";
+        currentSort = "default";
+        searchTerm = "";
+      }
+    }
+
+    function productSearchText(product) {
+      return [
+        product.name,
+        product.meta,
+        product.price,
+        product.tags,
+        getCategoryName(product.catId)
+      ].join(" ").toLowerCase();
+    }
+
+    function renderSortOptions() {
+      sortSelect.innerHTML = sortOptions.map(([value, label]) => `<option value="${escapeHtml(value)}" ${currentSort === value ? "selected" : ""}>${escapeHtml(label)}</option>`).join("");
+    }
+
+    function renderNav() {
+      const available = new Set(products.map(product => product.catId));
+      const visibleCategories = categories.filter(category => category.id === "all" || available.has(category.id));
+      const markup = visibleCategories.map(category => {
+        const isActive = category.id === activeCategory;
+        const label = getCategoryName(category.id);
+        const buttonClass = category.id === "all" ? "cat-button all-button" : "cat-button";
+        const mobileClass = category.id === "all" ? "mobile-filter all-button" : "mobile-filter";
+        return {
+          desktop: `<button class="${buttonClass}${isActive ? " is-active" : ""}" type="button" data-category="${escapeHtml(category.id)}" style="--active-color:${category.color}"><span class="cat-name">${escapeHtml(label)}</span><span class="cat-emoji" aria-hidden="true">${category.emoji}</span></button>`,
+          mobile: `<button class="${mobileClass}${isActive ? " is-active" : ""}" type="button" data-category="${escapeHtml(category.id)}" style="--active-color:${category.color}"><span class="cat-name">${escapeHtml(label)}</span><span class="cat-emoji" aria-hidden="true">${category.emoji}</span></button>`
+        };
+      });
+      desktopNav.innerHTML = markup.map(item => item.desktop).join("");
+      mobileNav.innerHTML = markup.map(item => item.mobile).join("");
+    }
+
+    function getFilteredProducts() {
+      const query = searchTerm.trim().toLowerCase();
+      let filtered = products.filter(product => activeCategory === "all" || product.catId === activeCategory);
+      if (query) filtered = filtered.filter(product => productSearchText(product).includes(query));
+
+      const byDefault = (a, b) => a.sortOrder - b.sortOrder;
+      const byNameAsc = (a, b) => a.name.localeCompare(b.name, "zh-Hant-HK", { numeric: true, sensitivity: "base" }) || byDefault(a, b);
+      const byKnownPrice = direction => (a, b) => {
+        const aKnown = hasKnownPrice(a);
+        const bKnown = hasKnownPrice(b);
+        if (aKnown && !bKnown) return -1;
+        if (!aKnown && bKnown) return 1;
+        if (!aKnown && !bKnown) return byDefault(a, b);
+        return direction === "asc" ? (a.priceNum - b.priceNum || byDefault(a, b)) : (b.priceNum - a.priceNum || byDefault(a, b));
+      };
+
+      if (currentSort === "popular") filtered.sort((a, b) => (b.popularity || 0) - (a.popularity || 0) || byDefault(a, b));
+      else if (currentSort === "newest") filtered.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded) || b.sortOrder - a.sortOrder);
+      else if (currentSort === "priceAsc") filtered.sort(byKnownPrice("asc"));
+      else if (currentSort === "priceDesc") filtered.sort(byKnownPrice("desc"));
+      else if (currentSort === "nameAsc") filtered.sort(byNameAsc);
+      else filtered.sort(byDefault);
+
+      return filtered;
+    }
+
+    function renderProducts() {
+      const filtered = getFilteredProducts();
+      productsGrid.innerHTML = filtered.map(product => {
+        const category = getCategoryById(product.catId);
+        const categoryLabel = getCategoryName(product.catId);
+        const pending = !hasKnownPrice(product);
+        const priceExtra = pending ? `<span class="pending-pill">查詢時確認</span>` : "";
+        return `<a class="product-card${pending ? " is-pending" : ""}" href="${escapeHtml(buildWhatsAppUrl(product))}" target="_blank" rel="noopener noreferrer" style="--card-color:${category.color}" aria-label="查詢 ${escapeHtml(product.name)}">
+          <div class="product-top">
+            <span class="category-chip"><span aria-hidden="true">${product.country}</span><span class="chip-text">${escapeHtml(categoryLabel)}</span></span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-name">${escapeHtml(product.name)}</h3>
+            <p class="product-sub">${escapeHtml(product.meta)}</p>
+            <div class="product-price-row">
+              <div>
+                <p class="price-label">預訂價</p>
+                <p class="product-price">${escapeHtml(product.price)}</p>
+                ${priceExtra}
+              </div>
+              <span class="product-hint">WhatsApp 查詢</span>
+            </div>
+          </div>
+        </a>`;
+      }).join("");
+
+      emptyState.style.display = filtered.length ? "none" : "block";
+      resultStatus.textContent = `共 ${filtered.length} 款商品`;
+      currentCategoryTitle.textContent = getCategoryName(activeCategory);
+    }
+
+    function renderItemListJsonLd() {
+      const itemList = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Buy Mate TCG 預訂價目表",
+        "itemListElement": products.map((product, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Product",
+            "name": product.name,
+            "category": getCategoryName(product.catId),
+            "url": `https://tcg.buymatehk.com/?cat=${encodeURIComponent(product.catId)}&q=${encodeURIComponent(product.name)}`
+          }
+        }))
+      };
+      const jsonLdNode = document.getElementById("itemListJsonLd");
+      if (jsonLdNode) jsonLdNode.textContent = JSON.stringify(itemList);
+    }
+
+    function renderAll() {
+      renderSortOptions();
+      renderNav();
+      renderProducts();
+      renderItemListJsonLd();
+      if (searchInput.value !== searchTerm) searchInput.value = searchTerm;
+      updateUrlState();
+    }
+
+    function setCategory(categoryId) {
+      activeCategory = categoryId;
+      renderAll();
+    }
+
+    function openModal() {
+      infoModal.classList.add("is-open");
+      infoModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      modalCloseButton.focus({ preventScroll: true });
+    }
+
+    function closeModal() {
+      infoModal.classList.remove("is-open");
+      infoModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    function handleNavClick(event) {
+      const button = event.target.closest("button[data-category]");
+      if (!button) return;
+      setCategory(button.getAttribute("data-category") || "all");
+    }
+
+    desktopNav.addEventListener("click", handleNavClick);
+    mobileNav.addEventListener("click", handleNavClick);
+    searchInput.addEventListener("input", event => {
+      searchTerm = event.target.value.trimStart().slice(0, 80);
+      renderProducts();
+      updateUrlState();
+    });
+    sortSelect.addEventListener("change", event => {
+      currentSort = event.target.value;
+      renderProducts();
+      updateUrlState();
+    });
+    desktopInfoButton.addEventListener("click", openModal);
+    mobileInfoButton.addEventListener("click", openModal);
+    modalCloseButton.addEventListener("click", closeModal);
+    modalBackdrop.addEventListener("click", closeModal);
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && infoModal.classList.contains("is-open")) closeModal();
+    });
+
+    readUrlState();
+    renderAll();
+  </script>
+</body>
+</html>
